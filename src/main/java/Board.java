@@ -1,34 +1,37 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Board {
-    List<Character> columns = Arrays.asList('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H');
-    List<Integer> rows = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8);
-    char[][] board =
+    private final List<Character> columns = Arrays.asList('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h');
+    private final List<Integer> rows = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8);
+    private final List<Character> legalPieces = Arrays.asList('R', 'N', 'B', 'Q', 'K', 'P');
+    private List<String> moveOrder = new ArrayList<>();
+    String [][] board =
     {
         {
-            'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'
+            "BR", "BN", "BB", "BQ", "BK", "BB", "BN", "BR"
         },
         {
-            'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'
+            "BP", "BP", "BP", "BP", "BP", "BP", "BP", "BP"
         },
         {
-            ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+            " ", " ", " ", " ", " ", " ", " ", " "
         },
         {
-            ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+            " ", " ", " ", " ", " ", " ", " ", " "
         },
         {
-            ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+            " ", " ", " ", " ", " ", " ", " ", " "
         },
         {
-            ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
+            " ", " ", " ", " ", " ", " ", " ", " "
         },
         {
-            'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'
+            "WP", "WP", "WP", "WP", "WP", "WP", "WP", "WP"
         },
         {
-            'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'
+            "WR", "WN", "WB", "WQ", "WK", "WB", "WN", "WR"
         }
     };
     private String whitePlayer = "Player 1";
@@ -61,5 +64,9 @@ public class Board {
      */
     private boolean isMoveLegal(String move, String currentPlayer){
         return false;
+    }
+
+    public String[][] getBoard(){
+        return this.board;
     }
 }
